@@ -13,8 +13,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class PlayerFinder implements ModInitializer {
-//	public static final String MOD_ID = "player-finder";
-
 	@Override
 	public void onInitialize() {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
