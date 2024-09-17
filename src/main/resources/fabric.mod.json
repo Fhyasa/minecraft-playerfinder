@@ -8,15 +8,15 @@
 		"GalvinPython"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/playerfinder",
+		"sources": "https://github.com/GalvinPython/minecraft-playerfinder"
 	},
 	"license": "MIT",
 	"icon": "assets/player-finder/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"galvin.playerfinder.PlayerFinder"
+			"me.imgalvin.playerfinder.PlayerFinder"
 		]
 	},
 	"depends": {
