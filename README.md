@@ -36,7 +36,7 @@ This mod is a **server-side** mod! You are **not** required to install this mod 
 
 Also: This mod requires the [Fabric API](https://modrinth.com/mod/fabric-api).
 
-PS: *You cannot use this mod on servers that don't use this mod. The commands are created server-side*
+PS: *You cannot use this mod on servers that don't use this mod (Player Finder). The commands are created server-side*
 
 ## Changelog
 
