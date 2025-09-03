@@ -2,7 +2,7 @@
 
 [Download from Modrinth](https://modrinth.com/mod/playerfinder)
 
-Player Finder is a Minecraft Mod for Fabric 1.21 that allows users to find the co-ordinates of other players on your server  
+Player Finder is a Minecraft Mod for Fabric, that allows users to find the co-ordinates of other players on your server.  
 
 ![Demonstration](https://raw.githubusercontent.com/GalvinPython/minecraft-playerfinder/main/.github/assets/java_ptTODXNtAi.png)
 
@@ -18,6 +18,7 @@ Use the `/findplayer` command and enter the player's name. There is also a dropd
 
 | Mod Version | Game Version(s) | Mod Version Title |
 |-------------|-----------------|-------------------|
+| 1.0.2       | 1.21.8          | 1.0.2+1.21.8      |
 | 1.0.1       | 1.21 - 1.21.1   | 1.0.1+1.21        |
 | 1.0.0       | 1.21 - 1.21.1   | 1.0.0+1.21        |
 
@@ -30,6 +31,14 @@ Also: This mod requires the **Fabric API** and Fabric Loader **0.16.0 or higher 
 PS: *You cannot use this mod on servers that don't use this mod. The commands are created server-side*
 
 ## Changelog
+
+### 1.0.2
+
+* Added support for **per-player permissions**  
+  * Each lookup requires `playerfinder.find.<playername>` (e.g. `playerfinder.find.steve`)  
+  * Lets you allow or deny lookups on a per-user basis with LuckPerms or another permissions provider
+* Root command now gated by `playerfinder.find` (fallback OP 2)  
+* Removed fallback that previously allowed non-ops to run the command with `.self`
 
 ### 1.0.1
 
