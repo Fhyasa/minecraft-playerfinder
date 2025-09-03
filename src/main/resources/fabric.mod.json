@@ -5,7 +5,8 @@
 	"name": "Player Finder",
 	"description": "Allows players to find each other's location on your server using the /findplayer command",
 	"authors": [
-		"GalvinPython"
+		"GalvinPython",
+		"Fhyasa"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/playerfinder",

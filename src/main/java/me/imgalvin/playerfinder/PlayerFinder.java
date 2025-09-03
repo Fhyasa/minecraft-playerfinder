@@ -23,13 +23,9 @@ public class PlayerFinder implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(
                 CommandManager.literal("findplayer")
-                    // Root predicate:
-                    // - allow if user has `playerfinder.find` (fallback: OP 2)
-                    // - OR allow if user has `playerfinder.find.self` (fallback: OP 0)
-                    .requires((ServerCommandSource src) ->
-                        Permissions.check(src, "playerfinder.find", 2)
-                        || Permissions.check(src, "playerfinder.find.self", 0)
-                    )
+                    // Root predicate: require global permission (fallback OP 2).
+                    // This means: by default, only OPs can run the command at all.
+                    .requires(Permissions.require("playerfinder.find", 2))
                     .then(CommandManager.argument("player", StringArgumentType.string())
                         .suggests(new PlayerSuggestionProvider())
                         .executes(context -> {
@@ -48,11 +44,12 @@ public class PlayerFinder implements ModInitializer {
                                 return 0;
                             }
 
-                            boolean findingOthers = !sourcePlayer.getGameProfile().getName().equalsIgnoreCase(playerName);
+                            // Permission check per target player
+                            // Node format: playerfinder.find.<playername>
+                            String specificNode = "playerfinder.find." + playerName.toLowerCase();
 
-                            // If finding others, require the extra node (fallback: OP 2).
-                            if (findingOthers && !Permissions.check(source, "playerfinder.find.others", 2)) {
-                                source.sendError(Text.literal("You don't have permission to locate other players."));
+                            if (!Permissions.check(source, specificNode, 2)) {
+                                source.sendError(Text.literal("You don't have permission to locate " + playerName + "."));
                                 return 0;
                             }
 
